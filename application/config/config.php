@@ -24,7 +24,7 @@ date_default_timezone_set('Asia/Taipei');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://demo.axcell28.idv.tw';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

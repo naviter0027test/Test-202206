@@ -1,22 +1,34 @@
 ###################
-What is CodeIgniter
+安裝
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+1.從github載下來後，.env.example.php 複製為 .env.php 並設定資料庫IP、資料庫名稱、資料庫帳號、資料庫密碼
+2.將專案中 Test-202206.sql 匯入自訂的資料庫
+3.於 application/cache 新增目錄: sess
 
 *******************
-Release Information
+API 說明文件
 *******************
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+新增
+==================
+Api Url: announce/add
+------------------
+Api 呼叫方式: POST
+------------------
++------------+-------------------+
+|傳送方式    |範例               |
++------------+-------------------+
+|query string|參數A=值A&參數B=值B|
++------------+-------------------+
+
++------------+---------+---------+----------------------------+
+|Body 參數   |格式     |必填     |說明                        |
++------------+---------+---------+----------------------------+
+|title       |string   |Required |標題                        |
++------------+---------+---------+----------------------------+
+|content     |string   |Required |內容                        |
++------------+---------+---------+----------------------------+
 
 **************************
 Changelog and New Features
