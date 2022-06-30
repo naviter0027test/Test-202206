@@ -9,13 +9,14 @@
     </head>
     <body>
         <div class="content">
-            <h3>公佈欄 - 新增</h3>
-            <form method='post' action='/announce/add' class='form1' enctype="multipart/form-data">
+            <h3>公佈欄 - 修改</h3>
+            <input type="hidden" name='idTemp' value="<?php echo $id; ?>" />
+            <form method='post' action='/announce/modify/<?php echo $id; ?>' class='form1' enctype="multipart/form-data">
                 <h5>標題</h5>
                 <p> <input type="text" name="title" /> </p>
                 <h5>內容</h5>
                 <p> <textarea name="content" ></textarea> </p>
-                <p class=""> <button class="btn">新增</button> </p>
+                <p class=""> <button class="btn">修改</button> </p>
             </form>
         </div>
     </body>
@@ -23,5 +24,5 @@
     <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/lib/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="/lib/jquery-validation/dist/localization/messages_zh_TW.min.js"></script>
-    <script src="/js/announce/add.js"></script>
+    <script src="/js/announce/modify.js"></script>
 </html>
