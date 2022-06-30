@@ -45,11 +45,6 @@ API URL: announce/index
 ------------------
 API 呼叫方式: GET
 ------------------
-+------------+-------------------+
-|傳送方式    |範例               |
-+------------+-------------------+
-|query string|參數A=值A&參數B=值B|
-+------------+-------------------+
 
 +------------+---------+---------+----------------------------+
 |Body 參數   |格式     |必填     |說明                        |
@@ -99,54 +94,85 @@ API 呼叫方式: GET
 
 }
 
-**************************
-Changelog and New Features
-**************************
+取得佈告
+==================
+API URL: announce/modifyGet/{id}
+------------------
+API 呼叫方式: GET
+------------------
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
++------------+---------+---------+----------------------------+
+|Body 參數   |格式     |必填     |說明                        |
++------------+---------+---------+----------------------------+
+|無                                                           |
++-------------------------------------------------------------+
 
-*******************
-Server Requirements
-*******************
+回傳 (格式:JSON)
+------------------
+{
 
-PHP version 5.6 or newer is recommended.
+  "status": true,
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+  "m": "處理完成",
 
-************
-Installation
-************
+  "d": {
 
-Please see the `installation section <https://codeigniter.com/userguide3/installation/index.html>`_
-of the CodeIgniter User Guide.
+    "id": 2,
 
-*******
-License
-*******
+    "title": "標題2",
 
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
+    "content": "內容2",
 
-*********
-Resources
-*********
+    "createdDate": "2022-06-01 00:00:00",
 
--  `User Guide <https://codeigniter.com/docs>`_
--  `Contributing Guide <https://github.com/bcit-ci/CodeIgniter/blob/develop/contributing.md>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community Slack Channel <https://codeigniterchat.slack.com>`_
+    "updatedDate": "2022-06-01 00:00:00"
+    
+  }
 
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
+}
 
-***************
-Acknowledgement
-***************
+編輯佈告
+==================
+API URL: announce/modify/{id}
+------------------
+API 呼叫方式: POST
+------------------
 
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
++------------+---------+---------+----------------------------+
+|Body 參數   |格式     |必填     |說明                        |
++------------+---------+---------+----------------------------+
+|title       |string   |Required |標題                        |
++------------+---------+---------+----------------------------+
+|content     |string   |Required |內容                        |
++-------------------------------------------------------------+
+
+回傳 (格式:JSON)
+------------------
+{
+
+  "status": true,
+
+  "m": "處理完成"
+}
+
+刪除佈告
+==================
+API URL: announce/del/{id}
+------------------
+API 呼叫方式: GET
+------------------
+
++------------+---------+---------+----------------------------+
+|Body 參數   |格式     |必填     |說明                        |
++------------+---------+---------+----------------------------+
+|無                                                           |
++-------------------------------------------------------------+
+
+回傳 (格式:JSON)
+------------------
+{
+
+  "status": true,
+
+  "m": "處理完成"
+}
